@@ -4,4 +4,4 @@
 
 2. The paper design: https://www.freecodecamp.org/news/how-to-write-a-good-software-design-document-66fcf019569c/
 
-3. 
+3. We're going to need a function for each number system to convert to all the other number systems.
