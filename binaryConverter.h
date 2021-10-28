@@ -15,7 +15,7 @@ int binToOctal(int input_number) {
         decimalNum / 8;
         count *= 10; 
     }
-    return octalNum;
+    cout << octalNum;
 }
 
 int binToDec(int input_number) {
@@ -29,7 +29,7 @@ int binToDec(int input_number) {
         decimalNum += lastDigit * base;
         base = base * 2;
     }
-    return decimalNum;
+    cout << decimalNum;
 }
 
 int binToHex(int input_number) {
