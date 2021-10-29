@@ -2,6 +2,7 @@
 #include <cmath>
 #include <string.h>
 #include"binaryConverter.h"
+#include"decimalConverter.h"
 
 using namespace std; 
 
@@ -17,14 +18,45 @@ bool validateInput(int input_number, int source) {
             } else {
                 checkInput = true;
             }
+            return checkInput;
         } 
         else if (source == 8) {
-            // validate octal number
+            while (input_number) {
+                if ((input_number % 10) >= 8) {
+                    std::cout << "Not a valid octal number, please re-enter";
+                    return checkInput;
+                } else {
+                    input_number = input_number / 10;
+                }
+                checkInput = true;
+            }
+            return checkInput;
         } 
         else if (source == 10) {
             // validate dec number
+            string checkDigit = to_string(input_number);
+            for (int i = 0; i < checkDigit.length(); i++) {
+                if (!isdigit(checkDigit[i])) {
+                    std::cout << "This is not a digit, please enter a digit" << "\n";
+                    break;
+                } else {
+                    checkInput = true;
+                    break;
+                }
+            }
+            return checkInput;
         } else {
-            // validate hex number
+            string checkHexChar = to_string(input_number);
+            for (int i = 0; i < checkHexChar.length(); i++) {
+                if (!isxdigit(checkHexChar[i])) {
+                    std::cout << "Not a valid hexadecimal, please re-enter"; 
+                    break;
+                } else {
+                    checkInput = true;
+                    break;
+                }
+            }
+            return checkInput;
         }
     } while (checkInput == false);
 }
