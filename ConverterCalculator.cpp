@@ -24,7 +24,7 @@ bool validateInput(int input_number, int source) {
             while (input_number) {
                 if ((input_number % 10) >= 8) {
                     std::cout << "Not a valid octal number, please re-enter";
-                    return checkInput;
+                    break;
                 } else {
                     input_number = input_number / 10;
                 }
